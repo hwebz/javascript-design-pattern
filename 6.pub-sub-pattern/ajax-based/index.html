@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Ajax-based jQuery implementation</title>
+    </head>
+    <body>
+        <form id="flickrSearch">
+            <input type="text" name="tag" id="query" />
+            <input type="submit" name="submit" value="Submit" />
+        </form>
+
+        <div id="lastQuery"></div>
+        <ol id="searchResults"></ol>
+
+        <script id="resultTemplate" type="text/html">
+            <% _.each(items, function(item) { %>
+                <li>
+                    <img src="<%= item.media.m %>" />
+                </li>
+            <% }); %>
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.10.2/underscore.min.js"></script>
+        <script src="../movie-ratings/jquery.ba-tinypubsub.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
